@@ -1,4 +1,4 @@
-package online.edrh.testfly
+package space.softsys.testfly
 
 import org.junit.Test
 
