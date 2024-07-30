@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "online.edrh.appprovider"
+    namespace = "online.edrh.testfly"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "online.edrh.appprovider"
+        applicationId = "online.edrh.testfly"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
