@@ -68,6 +68,7 @@ class AppsFragment : Fragment() {
 
     private fun onItemClicked(app: App) {
         val bundle = Bundle()
+        bundle.putInt("id", app.id)
         bundle.putString("name", app.name)
         bundle.putString("version", app.version)
         bundle.putString("lastUpdate", app.updatedAt)

@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import space.softsys.testfly.databinding.FragmentDetailsBinding
+import space.softsys.testfly.viewmodel.AppsViewModel
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -13,6 +15,8 @@ import space.softsys.testfly.databinding.FragmentDetailsBinding
 class DetailsFragment : Fragment() {
 
     private var _binding: FragmentDetailsBinding? = null
+
+    private val viewModel: AppsViewModel by viewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -41,7 +45,9 @@ class DetailsFragment : Fragment() {
 
     private fun setupListeners() {
         binding.btnDescargar.setOnClickListener {
-
+            binding.btnDescargar.isEnabled = false
+            arguments?.let { it1 -> arguments!!.getString("name")
+                ?.let { it2 -> viewModel.performDownload(requireContext(), it1.getInt("id"), it2) } }
         }
     }
 
