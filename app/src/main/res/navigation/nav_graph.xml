@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/DetailsFragment"
         android:name="space.softsys.testfly.DetailsFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Detalles"
         tools:layout="@layout/fragment_details">
 
 <!--        <action-->

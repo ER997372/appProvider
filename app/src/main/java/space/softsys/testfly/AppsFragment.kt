@@ -67,6 +67,11 @@ class AppsFragment : Fragment() {
     }
 
     private fun onItemClicked(app: App) {
-        findNavController().navigate(R.id.action_AppsFragment_to_DetailsFragment)
+        val bundle = Bundle()
+        bundle.putString("name", app.name)
+        bundle.putString("version", app.version)
+        bundle.putString("lastUpdate", app.updatedAt)
+
+        findNavController().navigate(R.id.action_AppsFragment_to_DetailsFragment, bundle)
     }
 }

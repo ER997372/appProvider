@@ -12,7 +12,8 @@ class AppsAdapter(private val apps : ArrayList<App>, private val listener : (App
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(app: App, listener: (App) -> Unit) {
             binding.card.setOnClickListener{listener(app)}
-            binding.itemName.text = app.name
+            binding.name.text = app.name
+            binding.version.text = app.version
         }
     }
 

@@ -30,11 +30,25 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setData()
+        setupListeners()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setupListeners() {
+        binding.btnDescargar.setOnClickListener {
+
+        }
+    }
+
+    private fun setData() {
+        binding.appName.text = arguments?.getString("name")
+        binding.appVersion.text = arguments?.getString("version")
+        binding.lastUpdate.text = arguments?.getString("lastUpdate")
+
     }
 }
